@@ -1,0 +1,26 @@
+.row {
+  font-size: 18px;
+  position: relative;
+  height: 40px;
+
+  .input {
+    position: absolute;
+    left: 500px;
+    top: 0;
+    width: 100px;
+      
+    input[type="number"] {
+      border: solid 1px black;
+      width: 75px;
+      font-size: 20px;
+    }
+
+    input[type="checkbox"] {
+      font-size: 20px;
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+}

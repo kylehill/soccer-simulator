@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="dist/css/display.css" />
+</head>
+<body>
+
+  <div class="row">
+    <label>
+      What percentage of the time should a goal be scored?
+      <div class="input">
+        <input class="js-scoring-ratio" type="number" />%
+      </div>
+    </label>
+  </div>
+
+  <div class="row">
+    <label>
+      What percentage of the time should the home team score?
+      <div class="input">
+        <input class="js-home-goals" type="number" />%
+      </div>
+    </label>
+  </div>
+
+  <div class="row">
+    <label>
+      How much of a (percentage) boost should the home team get?
+      <div class="input">
+        <input class="js-home-advantage" type="number" />%
+      </div>
+    </label>
+  </div>
+
+  <div class="row">
+    <label>
+      How many non-goals should the game have?
+      <div class="input">
+        <input class="js-periods" type="number" />
+      </div>
+    </label>
+  </div>
+
+  <div class="row">
+    <label>
+      Should there be extra time if the game is still tied?
+      <div class="input">
+        <input class="js-extra-time" type="checkbox" />
+      </div>
+    </label>
+  </div>
+
+  <div class="row toggle-row hidden">
+    <label>
+      How many non-goals should extra time have?
+      <div class="input">
+        <input class="js-extra-periods" type="number" />
+      </div>
+    </label>
+  </div>
+
+  <div class="row toggle-row hidden">
+    <label>
+      Should there be penalties if the game is still tied at the end of ET?
+      <div class="input">
+        <input class="js-penalties" type="checkbox" />
+      </div>
+    </label>
+  </div>
+
+  <button class="js-simulate">Simulate</button>
+
+  <div class="row result-row hidden">
+    Simulated 100,000 matches...
+
+    <div class="row">
+      Home wins: <span class="stat js-home-wins"></span>%
+    </div>
+
+    <div class="row">
+      Away wins: <span class="stat js-away-wins"></span>%
+    </div>
+
+    <div class="row">
+      Draws: <span class="stat js-draws"></span>%
+    </div>
+  </div>
+
+  <script src="jquery.min.js"></script>
+  <script src="dist/js/game.js"></script>
+  <script src="dist/js/display.js"></script>
+
+</body>
+</html>
