@@ -7,6 +7,11 @@ var simulate = function simulate() {
     draw: 0
   };
 
+  var goals = {
+    home: 0,
+    away: 0
+  };
+
   var gameOptions = {
     scoringRatio: $(".js-scoring-ratio").val() / 100,
     homeGoals: $(".js-home-goals").val() / 100,
@@ -18,13 +23,20 @@ var simulate = function simulate() {
     penalties: $(".js-penalties").prop("checked")
   };
 
-  for (var i = 0; i < 100000; i++) {
+  var i = undefined;
+  for (i = 0; i < 100000; i++) {
     var g = game(gameOptions);
     results[g.result]++;
+    goals.home += g.home;
+    goals.away += g.away;
   }
 
   $(".js-home-wins").text(Math.round(results.home / 10) / 100);
+  $(".js-home-goals").text(Math.round(goals.home / (i / 100)) / 100);
+
   $(".js-away-wins").text(Math.round(results.away / 10) / 100);
+  $(".js-away-goals").text(Math.round(goals.away / (i / 100)) / 100);
+
   $(".js-draws").text(Math.round(results.draw / 10) / 100);
 
   $(".result-row").removeClass("hidden");
